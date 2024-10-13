@@ -5,20 +5,28 @@ let currentPets = [];
 // 4 ta url theke data fetch kore nilam
 // 1) only 4 categoryr icon and name fetch
 const getCategory = async () => {
+    const spinner = document.getElementById('spinner');
+    spinner.classList.remove('hidden');
+
     const url = 'https://openapi.programming-hero.com/api/peddy/categories';
     let response = await fetch(url);
     let obj = await response.json();
 
+    setTimeout(() => {
+        spinner.classList.add('hidden');
+        displayButtons(obj.categories)
+    }, 2000); 
+
     console.log(obj);
-    displayButtons(obj.categories)
+    
 
 }
 
 // 2) all categoryr shb pet fetch
 const getAllPets = async () => {
     const spinner = document.getElementById('spinner');
-    const selectPets = document.getElementById('selectPets');
     spinner.classList.remove('hidden');
+    const selectPets = document.getElementById('selectPets');
     selectPets.classList.remove('border-bordercolor', 'border-[1px]', 'rounded-lg');
 
     const url = 'https://openapi.programming-hero.com/api/peddy/pets';
@@ -31,24 +39,26 @@ const getAllPets = async () => {
         displayPets(obj.pets);
     }, 2000); 
 
-   
-
-
 }
 
 // 3) category wise pet info fetch
 const getPetByCategory = async (category) => {
-    //alert(category);
+    const spinner = document.getElementById('spinner');
+    spinner.classList.remove('hidden')
+
     const url = `https://openapi.programming-hero.com/api/peddy/category/${category}`;
     let response = await fetch(url);
     let obj = await response.json();
 
-    displayPets(obj.data);
+    setTimeout(() => {
+        spinner.classList.add('hidden');
+        displayPets(obj.data);
+    }, 2000); 
+ 
 }
 
 // 3) Id wise pet info fetch
 const getPetById = async (petId) => {
-    //alert(category);
     const url = `https://openapi.programming-hero.com/api/peddy/pet/${petId}`;
     let response = await fetch(url);
 
