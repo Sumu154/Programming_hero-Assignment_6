@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" theme="light">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- style css -->
+        <link rel="stylesheet" href="style.css">
+        <!-- tailwind + daisy -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- javascript -->
+        <script src="scripts/custom-style.js"></script>
+
+
+        <!-- text font -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+        </style>
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/66cabd1410.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="font-Lato">
+        <header>
+          <div class="w-[90%] mx-auto">
+            <!-- nav bar -->
+            <nav class="flex justify-between items-center py-6">
+              <div class="flex gap-2 items-center">
+                <img class="h-6 w-7" src="assets/images/logo.webp" alt="">
+                <h3 class=" font-extrabold text-xl md:text-2xl"> Peddy </h3>
+              </div>
+              <div>
+                <ul class="hidden md:flex gap-8">
+                  <li> <a class="text-ash hover:text-black" href=""> Home </a> </li>
+                  <li> <a class="text-ash hover:text-black" href=""> Shop </a> </li>
+                  <li> <a class="text-ash hover:text-black" href=""> Contact </a> </li>
+                </ul>
+              </div>
+              <div class="flex gap-5 items-center">
+                <div class="dropdown dropdown-end md:hidden">
+                  <div tabindex="0" role="button" class="text-lg"> <i class="fa-solid fa-bars"></i> </div>
+                  <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                    <li><a> Home </a></li>
+                    <li><a> Shop </a></li>
+                    <li><a> Contact </a></li>
+                  </ul>
+                </div>
+                <img class="h-10 w-10 p-2 border-bordercolor border-[1px] rounded-full" src="assets/icons/user.png" alt="">
+              </div>
+            </nav>
+
+            <!-- banner part -->
+            <div class="max-w-[800px] mx-auto py-6">
+              <p class="text-center font-bold mb-4 text-lg md:text-xl lg:text-2xl"> <span class="text-lightash "> Bringing Families Together </span> ❤️‍🔥 </p>
+              <h3 class="text-center text-black font-extrabold mb-5 text-5xl md:text-6xl lg:text-7xl"> Your Path to Adoption Starts Here </h3>
+              <p class="text-center text-black mb-7 text-sm md:text-base"> 
+                It is a long established fact that a reader will be distracted by the readable 
+                content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a. 
+              </p>
+              <button class="block mx-auto bg-darkteal hover:bg-hoverteal text-white px-7 py-3 rounded-lg mb-8"> View More </button>
+              <img class="max-w-[90%]" src="assets/images/pet.webp" alt="">
+            </div>
+          </div>
+        </header>
+
+        <main>
+          <section class="max-w-[90%] mx-auto my-6 ">
+            <h4 class="text-center text-black font-extrabold mb-4 text-3xl md:text-4xl"> Adopt  Your  Best Friend </h4>
+            <p class="max-w-[600px] mx-auto text-center text-black text-opacity-70">
+              It is a long established fact that a reader will be distracted by the readable content of a page when 
+              looking at its layout. The point of using Lorem Ipsum is that it has a.
+            </p>
+            <div id="btn-container" class="my-12 flex justify-between items-center">
+            </div>
+          </section>
+
+          <!-- section two -->
+          <section  class="max-w-[90%] mx-auto">
+            <!-- button ar p tag tar jonne -->
+            <div class="flex justify-between items-center">
+              <span class="text-black font-extrabold text-2xl"> Best Deal for you </span>
+              <button id="sortBtn" class="bg-darkteal hover:bg-hoverteal text-white px-7 py-3 rounded-lg"> Sort by Price </button>
+            </div>
+
+            <!-- pets der jonne div -->
+            <div class="my-4 flex gap-4">
+              <!-- left side for normal pets -->
+              <div class="w-3/4">
+
+                <!-- spinner -->
+                <div id="spinner" class="flex justify-center items-center hidden">
+                  <span class="loading loading-bars loading-lg "></span>
+                </div>
+
+                <!-- for adopt abutton modal -->
+                <dialog id="adopt-modal" class="modal">
+                  <div class="modal-box w-[340px]">
+                    <img class="w-24 mx-auto" src="assets/images/congrats.webp" alt="">
+                    <h3 class="text-center text-3xl font-extrabold"> Congrates! </h3>
+                    <p class="text-center font-bold py-2"> Adoption process is start for your pet </p>
+                    <p id="countdown" class="text-center text-4xl font-bold py-3"> </p>
+                  </div>
+                </dialog>
+
+                <!-- for details button modal -->
+                <dialog id="details-modal" class="modal modal-middle">
+                  <div class="modal-box max-w-[440px] p-3 rounded-md">
+                    <div id="modal-container">
+                      <!-- from api fetched modal content -->
+
+                    </div>
+                  </div>
+                </dialog> 
+
+                <!-- for the pets details -->
+                <div id="allPets" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                </div>
+              </div>
+
+              <!-- right side for selected pets -->
+              <div class="w-1/4">
+                <div id="selectPets" class="grid min-h-28 grid-cols-1 lg:grid-cols-2 gap-2 p-2">
+                  
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="bg-black">
+          <div class="max-w-[90%] mx-auto py-14 flex flex-col gap-8 md:flex-row md:justify-between">
+            <div>
+              <div class="flex gap-2 items-center mb-4">
+                <img class="h-6 w-7" src="assets/images/logo.webp" alt="">
+                <h3 class="text-white font-extrabold text-xl md:text-2xl"> Peddy </h3>
+              </div>
+              <div>
+                <p class="text-white text-opacity-90 mb-1"> Location: av. Washington 165, NY CA 54003 </p>
+                <p class="text-white text-opacity-90 mb-1"> Phone: +31 85 964 47 25 </p>
+                <p class="text-white text-opacity-90 mb-1"> Email: info@yourdomain.com </p>
+                <p class="text-white text-opacity-90 mb-1"> Openings hours: 9.00 AM - 5.00 PM </p>
+              </div>
+
+              <div class="flex gap-5 items-center mt-6">
+                <a href=""> <img src="assets/icons/facebook.png" alt=""> </a>
+                <a href=""> <img src="assets/icons/twitter.png" alt=""> </a>
+                <a href=""> <img src="assets/icons/youtube.png" alt=""> </a>
+                <a href=""> <img src="assets/icons/insta.png" alt=""> </a>
+              </div>
+            </div>
+            <div>
+              <h5 class="text-white text-opacity-90 font-bold text-lg"> Useful links </h5>
+              <ul class="my-4 flex flex-col gap-[6px]">
+                <li class="text-white text-opacity-60"> Home </li>
+                <li class="text-white text-opacity-60"> About Us </li>
+                <li class="text-white text-opacity-60"> Animals </li>
+                <li class="text-white text-opacity-60"> Foundation </li>
+                <li class="text-white text-opacity-60"> Contact </li>
+              </ul>
+            </div>
+            <div>
+              <h5 class="text-white text-opacity-90 font-bold text-lg mb-5"> Drop a Message </h5>
+              <div class="flex flex-col gap-3">
+                <input class="w-52 bg-white bg-opacity-5 p-3 rounded-lg" type="email" placeholder="Enter your email">
+                <button class="w-52 bg-darkteal hover:bg-hoverteal text-white px-7 py-3 rounded-lg"> Sort by Price </button>
+              </div>
+            </div>
+          </div>
+        </footer>
+
+
+        <!-- scripts -->
+         <script src="scripts/api.js"></script>
+    </body>
+
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" theme="light">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <!-- style css -->
+        <link rel="stylesheet" href="style.css">
+        <!-- tailwind + daisy -->
+        <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- javascript -->
+        <script src="scripts/custom-style.js"></script>
+
+
+        <!-- text font -->
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+        </style>
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/66cabd1410.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <div id="spinner" class="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-50">
+          <span class="loading loading-bars loading-lg "></span>
+        </div>
+        
+        <button class="w-[120px] md:w-[180px] flex gap-3 items-center justify-center py-[10px] border-darkteal    border-opacity-15 border-[1px] rounded-lg">
+            <img class="h-10 w-10" src="assets/icons/dogs.png" alt="">
+            <p class="text-black font-bold text-xl"> Dogs </p>
+        </button>
+        <br><br>
+
+        <button class="flex gap-3 items-center px-10 py-[10px] border-darkteal   border-[1.5px] rounded-full bg-darkteal bg-opacity-20">
+            <img class="h-10 w-10" src="assets/icons/dogs.png" alt="">
+            <p class="text-black font-bold text-xl"> Dogs </p>
+        </button>
+
+        <div>
+            <div class="card bg-base-100 w-1/4 border-bordercolor border-[1px]">
+                <figure class="p-4 h-[200px]">
+                  <img class="h-full rounded-lg" src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp" alt="Shoes" />
+                </figure>
+                <div class="card-body py-0 px-4 gap-1">
+                  <h5 class="text-black font-bold text-lg">Mister Tartosh</h5>
+                  <div class="flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/breed.jpg" alt="">
+                    <p class="text-black text-opacity-70"> Breed: Golder retriever </p>
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/birth.png" alt="">
+                    <p class="text-black text-opacity-70"> Birth: 2024 </p>
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/gender.png" alt="">
+                    <p class="text-black text-opacity-70"> Gender: Female </p>
+                  </div>
+                  <div class="flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/price.png" alt="">
+                    <p class="text-black text-opacity-70"> Price : 199$ </p>
+                  </div>
+                  
+                </div>
+                <div class="card-actions m-4 pt-2 bg-slate-900 border-ash border-t-[1px] border-opacity-10 flex justify-between">
+                    <button class="btn h-10 min-h-10 bg-white border-darkteal border-opacity-15"> <img src="assets/icons/thumps.svg" alt=""></button>
+                    <button class="btn h-10 min-h-10 text-darkteal bg-white border-darkteal border-opacity-15"> Adopt </button>
+                    <button class="btn h-10 min-h-10 text-darkteal bg-white border-darkteal border-opacity-15"> Details </button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="h-[400px] bg-slate-50 rounded-lg flex justify-center items-center">
+          <div class="max-w-[600px]">
+            <img class="mx-auto mb-4" src="assets/images/error.webp" alt="">
+            <p class="text-center text-black font-bold mb-4 text-2xl md:3xl"> No Information Available </p>
+            <p>
+              It is a long established fact that a reader will be distracted by the readable content of a page when looking at 
+              its layout. The point of using Lorem Ipsum is that it has a.  
+            </p>
+          </div>
+        </div>
+
+        <!-- Open the modal using ID.showModal() method -->
+        <button class="btn" onclick="my_modal_5.showModal()">open modal</button>
+        <dialog id="my_modal_5" class="modal modal-middle">
+            <div class="modal-box max-w-[400px] p-3 rounded-md">
+                <img class="rounded-md w-full h-[180px]" src="assets/images/pet.webp" alt="">
+                <h5 class="text-black font-bold text-lg my-[6px]">Mister Tartosh</h5>
+                <div class="flex gap-1 flex-wrap mb-2">
+                  <div class="w-[48%] flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/breed.jpg" alt="">
+                    <p class="text-black text-opacity-70 text-sm"> Breed: Golder retriever </p>
+                  </div>
+                  <div class="w-[48%] flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/birth.png" alt="">
+                    <p class="text-black text-opacity-70  text-sm"> Birth: 2024 </p>
+                  </div>
+                  <div class="w-[48%] flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/gender.png" alt="">
+                    <p class="text-black text-opacity-70 text-sm"> Gender: Female </p>
+                  </div>
+                  <div class="w-[48%] flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/price.png" alt="">
+                    <p class="text-black text-opacity-70 text-sm"> Price : 199$ </p>
+                  </div>
+                  <div class="w-[48%] flex gap-2 items-center">
+                    <img class="w-5 h-5" src="assets/icons/price.png" alt="">
+                    <p class="text-black text-opacity-70 text-sm"> Price : 199$ </p>
+                  </div>
+                </div>
+                <div class="border-bordercolor border-t-[1px] py-2">
+                    <h5 class="text-black font-bold text-base">Details Information</h5> 
+                    <p class="text-black text-opacity-70 text-sm">
+                      It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                      The point of using is that it has a more-or-less normal distribution of letters, as opposed to using.
+                    </p> 
+                </div>
+                <div class="py-2">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="w-full text-darkteal bg-darkteal bg-opacity-10 border-darkteal border-[1px] border-opacity-20 py-2 rounded-lg"> Cancel </button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+
+        <div c>
+          <img class="w-full" src="assets/images/pet.webp" alt="">
+        </div>
+
+
+        <!-- Open the modal using ID.showModal() method -->
+
+        <!-- Open the modal using ID.showModal() method -->
+<button class="btn" onclick="openModalWithCountdown()">Open Modal</button>
+
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box w-[340px]">
+        <img class="w-24 mx-auto" src="assets/images/congrats.webp" alt="">
+        <h3 class="text-center text-3xl font-bold"> Congrates! </h3>
+        <p class="text-center py-2"> Adoption process is start for your pet </p>
+        <p id="countdown" class="text-center text-4xl font-bold py-3"> </p>
+      </div>
+    </dialog>
+
+    <script>
+      function openModalWithCountdown() {
+        const modal = document.getElementById('my_modal_1');
+        const countdownElement = document.getElementById('countdown');
+        let countdown = 3; // Starting countdown from 3
+
+        // Show the modal
+        modal.showModal();
+
+        // Update the countdown every second
+        countdownElement.innerText =  countdown ;
+        const interval = setInterval(() => {
+          countdown--;
+
+          countdownElement.innerText =  countdown ;
+
+          if (countdown === 0) {
+            clearInterval(interval);  // Stop the countdown
+            modal.close();            // Close the modal
+          }
+        }, 1000); // Update every 1 second
+      }
+    </script>
+
+
+
+    </body>
+
+
+</html>
