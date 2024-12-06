@@ -2,7 +2,7 @@
 
 In this assignment we have to created a pet adoption platform where users can browse and adopt pets. We will provides you APIs to fetch pet-related data such as all pets, categories of pets, and specific pet details , pet data based on category
 
-🚀 Deployed Project:  https://taupe-bombolone-5e951c.netlify.app
+🚀 Deployed Project:  https://moonlit-arithmetic-ce3d57.netlify.app/
 
 
 
